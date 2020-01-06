@@ -1,5 +1,5 @@
 <script>
-	import TodoIndex from './views/TodoIndex/TodoIndex.svelte';
+	import TodoIndex from './views/Todo/Index.svelte';
 
 	export let existingTodos = [];
 </script>

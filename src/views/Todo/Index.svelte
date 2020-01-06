@@ -1,7 +1,6 @@
 <script>
-  import StyledButton from '../../components/StyledButton.svelte';
-  import StyledInput from '../../components/StyledInput.svelte';
-  import TodoItem from './TodoItem.svelte';
+  import TodoForm from './Form.svelte';
+  import TodoItem from './Item.svelte';
 
   export let todos = [];
   let newTodo = '';
@@ -66,25 +65,10 @@
 
 <div class="app-wrap">
   <h1>To-Do list with Svelte</h1>
-  <form
-    class="todo-form"
-    on:submit|preventDefault="{addTodo}"
-  >
-    <div class="input">
-      <StyledInput
-        name="todo-input"
-        placeholder="New task"
-        bind:value="{newTodo}"
-      />
-    </div>
-    <div class="button">
-      <StyledButton
-        disabled="{!newTodo}"
-        text="Add"
-        type="submit"
-      />
-    </div>
-  </form>
+  <TodoForm
+    bind:input="{newTodo}"
+    on:add-todo="{addTodo}"
+  />
   {#each todos as item}
     <TodoItem
       completed="{item.completed}"
@@ -97,9 +81,9 @@
 </div>
 
 <style>
-	h1 {
+  h1 {
     color: #ff3e00;
-		font-size: 2em;
+    font-size: 2em;
     font-weight: 100;
     text-transform: uppercase;
   }
@@ -109,17 +93,5 @@
     height: 50%;
     justify-content: flex-start;
     padding: 0 10px;
-  }
-  .todo-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .input {
-    margin-right: 5px;
-    width: 100%;
-  }
-  .button {
-    margin-left: 5px;
   }
 </style>
