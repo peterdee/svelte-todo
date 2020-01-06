@@ -1,3 +1,7 @@
+## svelte-todo
+
+[![Known Vulnerabilities](https://snyk.io/test/github/peterdee/svelte-todo/badge.svg?targetFile=package.json)](https://snyk.io/test/github/peterdee/svelte-todo?targetFile=package.json)
+
 *Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
