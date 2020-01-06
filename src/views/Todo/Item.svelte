@@ -17,13 +17,13 @@
 >
   <div
     class="todo-text"
-    on:click|preventDefault="{() => switchStatus(id)}"
+    on:click="{() => switchStatus(id)}"
   >
     <span class="{completed ? 'completed' : ''}">
       {text}
     </span>
   </div>
-  <div on:click|preventDefault="{() => deleteTodo(id)}">
+  <div on:click="{() => deleteTodo(id)}">
     ✖
   </div>
 </div>
