@@ -1,19 +1,27 @@
 <script>
-  import { afterUpdate } from 'svelte';
+  import { afterUpdate, onMount } from 'svelte';
+	import { fade, fly } from 'svelte/transition';
 
   import { store } from '../store';
   import TodoForm from './Form.svelte';
   import TodoItem from './Item.svelte';
 
-  export let todos = $store.todos;
+  let mounted = false;
   let newTodo = '';
+  let todos = $store.todos;
 
   /**
-   * A lifecycle hook that runs after every update
-   * @returns {void}
+   * A lifecycle hook that fires after every update
    */
 	afterUpdate(() => {
 		todos = $store.todos;
+  });
+
+	/**
+	 * A lifecycle hook that fires up when the DOM is mounted
+	 */
+	onMount(() => {
+		mounted = true;
 	});
 
   /**
@@ -46,23 +54,35 @@
 </script>
 
 <div class="app-wrap">
-  <h1 class="noselect">Todo-list with Svelte</h1>
-  <div class="source noselect">
-    <a href="https://github.com/peterdee/svelte-todo">View the source</a>
-  </div>
-  <TodoForm
-    bind:input="{newTodo}"
-    on:add-todo="{addTodo}"
-  />
-  {#each todos as item}
-    <TodoItem
-      completed="{item.completed}"
-      id="{item.id}"
-      on:delete-todo={deleteTodo}
-      on:switch-status={switchTodoStatus}
-      text="{item.text}"
+  {#if mounted}
+    <h1
+      class="noselect"
+      transition:fade="{{ duration: 250 }}"
+    >
+      Todo-list with Svelte
+    </h1>
+    <div
+      class="source noselect"
+      transition:fade="{{ duration: 500 }}"
+    >
+      <a href="https://github.com/peterdee/svelte-todo">View the source</a>
+    </div>
+    <TodoForm
+      bind:input="{newTodo}"
+      on:add-todo="{addTodo}"
     />
-	{/each}
+    {#each todos as item}
+      <div transition:fly="{{ duration: 250 }}">
+        <TodoItem
+          completed="{item.completed}"
+          id="{item.id}"
+          on:delete-todo={deleteTodo}
+          on:switch-status={switchTodoStatus}
+          text="{item.text}"
+        />
+      </div>
+	  {/each}
+  {/if}
 </div>
 
 <style>

@@ -4,7 +4,7 @@
 
 [![Known Vulnerabilities](https://snyk.io/test/github/peterdee/svelte-todo/badge.svg?targetFile=package.json)](https://snyk.io/test/github/peterdee/svelte-todo?targetFile=package.json)
 
-![GitHub PageSpeed](https://api.speedbadge.io/v1?url=https://svelte-todo.herokuapp.com&strat=mobile&showStratLabel=true)
+[![GitHub PageSpeed](https://api.speedbadge.io/v1?url=https://svelte-todo.herokuapp.com&strat=desktop&showStratLabel=true)](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fsvelte-todo.herokuapp.com%2F&tab=desktop)
 
 This is a simple Todo-list application, created with [Svelte](https://svelte.dev).
 
