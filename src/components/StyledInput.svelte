@@ -5,6 +5,7 @@
 </script>
 
 <input
+  class="noselect"
   id="input-{name}"
   name="{name}"
   placeholder="{placeholder}"

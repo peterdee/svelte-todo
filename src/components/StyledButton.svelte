@@ -5,6 +5,7 @@
 </script>
 
 <button
+  class="noselect"
   disabled="{disabled}"
   type="{type}"
 >
