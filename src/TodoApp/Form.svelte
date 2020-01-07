@@ -1,8 +1,8 @@
 <script>
   import { createEventDispatcher } from 'svelte';
   
-  import StyledButton from '../../components/StyledButton.svelte';
-  import StyledInput from '../../components/StyledInput.svelte';
+  import StyledButton from '../components/StyledButton.svelte';
+  import StyledInput from '../components/StyledInput.svelte';
 
   export let input = '';
 

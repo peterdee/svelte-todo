@@ -90,8 +90,8 @@
   .app-wrap {
     display: flex;
     flex-direction: column;
-    height: 50%;
+    min-height: 250px;
     justify-content: flex-start;
-    padding: 0 10px;
+    padding: 25px 10px;
   }
 </style>

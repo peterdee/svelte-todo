@@ -1,10 +1,33 @@
 {
   "name": "svelte-app",
+  "private": true,
   "version": "1.0.0",
+  "author": {
+    "name": "Peter Dyumin",
+    "url": "https://github.com/peterdee"
+  },
+  "description": "A simple Todo-list with Svelte",
+  "homepage": "https://github.com/peterdee/svelte-todo",
+  "license": "ISC",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
+  },
+  "engines": {
+    "node": "13.5.0",
+    "npm": "6.13.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peterdee/svelte-todo"
+  },
+  "keywords": [
+    "Svelte",
+    "Todo-list"
+  ],
+  "dependencies": {
+    "sirv-cli": "^0.4.4"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
@@ -14,8 +37,5 @@
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
     "svelte": "^3.0.0"
-  },
-  "dependencies": {
-    "sirv-cli": "^0.4.4"
   }
 }
