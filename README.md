@@ -4,9 +4,13 @@
 
 [![Known Vulnerabilities](https://snyk.io/test/github/peterdee/svelte-todo/badge.svg?targetFile=package.json)](https://snyk.io/test/github/peterdee/svelte-todo?targetFile=package.json)
 
+![GitHub PageSpeed](https://api.speedbadge.io/v1?url=https://svelte-todo.herokuapp.com&strat=mobile&showStratLabel=true)
+
 This is a simple Todo-list application, created with [Svelte](https://svelte.dev).
 
 Project was created from a [Svelte application template](https://github.com/sveltejs/template) using [degit](https://github.com/Rich-Harris/degit).
+
+Check [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fsvelte-todo.herokuapp.com%2F&tab=desktop) for the performance information and bundle sizes.
 
 ### Deploy
 
