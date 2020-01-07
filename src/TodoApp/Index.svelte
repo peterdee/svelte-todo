@@ -1,9 +1,20 @@
 <script>
+  import { afterUpdate } from 'svelte';
+
+  import { store } from '../store';
   import TodoForm from './Form.svelte';
   import TodoItem from './Item.svelte';
 
-  export let todos = [];
+  export let todos = $store.todos;
   let newTodo = '';
+
+  /**
+   * A lifecycle hook that runs after every update
+   * @returns {void}
+   */
+	afterUpdate(() => {
+		todos = $store.todos;
+	});
 
   /**
    * Add new todo to the list
@@ -11,21 +22,11 @@
    */
   const addTodo = () => {
     if (newTodo) {
-      // update the array
-      todos = [
-        ...todos,
-        {
-          id: Date.now(),
-          completed: false,
-          text: newTodo,
-        },
-      ];
+      // update the store
+      store.addTodo(newTodo);
 
       // clear the input
-      newTodo = '';
-
-      // update the localStorage
-      return localStorage.setItem('todos', JSON.stringify(todos));
+      return newTodo = '';
     }
   };
 
@@ -34,38 +35,19 @@
    * @param detail {number} - passed ID of the todo item
    * @returns {void}
    */
-  const deleteTodo = ({ detail: todoId = null }) => {
-    // update the array
-    todos = [...todos.filter(({ id = null }) => id !== todoId)];
-
-    // update the localStorage
-    return localStorage.setItem('todos', JSON.stringify(todos));
-  };
+  const deleteTodo = ({ detail: todoId = null }) => store.deleteTodo(todoId);
 
   /**
    * Switch status for a todo
    * @param detail {number} - passed ID of the todo item
    * @returns {void}
    */
-  const switchTodoStatus = ({ detail: todoId = null }) => {
-    // update the array
-    todos = [...todos.reduce((arr, item) => {
-      const mutable = { ...item };
-      if (mutable.id === todoId) {
-        mutable.completed = !mutable.completed;
-      }
-      arr.push(mutable);
-      return arr;
-    }, [])];
-
-    // update the localStorage
-    return localStorage.setItem('todos', JSON.stringify(todos));
-  };
+  const switchTodoStatus = ({ detail: todoId = null }) => store.switchTodoStatus(todoId);
 </script>
 
 <div class="app-wrap">
-  <h1>To-Do list with Svelte</h1>
-  <div class="source">
+  <h1 class="noselect">Todo-list with Svelte</h1>
+  <div class="source noselect">
     <a href="https://github.com/peterdee/svelte-todo">View the source</a>
   </div>
   <TodoForm

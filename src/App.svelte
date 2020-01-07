@@ -1,12 +1,10 @@
 <script>
 	import Footer from './components/Footer.svelte';
 	import TodoIndex from './TodoApp/Index.svelte';
-
-	export let existingTodos = [];
 </script>
 
 <main>
-	<TodoIndex todos="{existingTodos}" />
+	<TodoIndex />
 </main>
 <Footer />
 

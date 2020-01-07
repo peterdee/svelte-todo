@@ -23,7 +23,10 @@
       {text}
     </span>
   </div>
-  <div on:click="{() => deleteTodo(id)}">
+  <div
+    class="noselect"
+    on:click="{() => deleteTodo(id)}"
+  >
     ✖
   </div>
 </div>
@@ -32,6 +35,7 @@
   .todo-item {
     display: flex;
     flex-direction: row;
+    font-size: 16px;
     justify-content: space-between;
     padding: 10px 15px;
     transition: background-color 250ms ease;
@@ -50,7 +54,8 @@
     width: 100%;
   }
   .completed {
+    color: #aaa;
     text-decoration: line-through;
-    transition: text-decoration 150ms ease;
+    transition: text-decoration 150ms ease, color 500ms ease;
   }
 </style>

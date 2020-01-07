@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer noselect">
   With <span
     class="highlight"
   >❤</span> by <a
