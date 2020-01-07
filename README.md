@@ -1,5 +1,7 @@
 ## svelte-todo
 
+[![Build Status](https://travis-ci.com/peterdee/svelte-todo.svg?branch=stage)](https://travis-ci.com/peterdee/svelte-todo)
+
 [![Known Vulnerabilities](https://snyk.io/test/github/peterdee/svelte-todo/badge.svg?targetFile=package.json)](https://snyk.io/test/github/peterdee/svelte-todo?targetFile=package.json)
 
 This is a simple Todo-list application, created with [Svelte](https://svelte.dev).
@@ -15,15 +17,15 @@ Project was created from a [Svelte application template](https://github.com/svel
 
 ### Lanuch
 
-Development:
+**Development**:
 
 - `npm run dev`
 
-The app will be available at http://localhost:5000.
+The app will be available at http://localhost:8080.
 
 [Rollup](https://rollupjs.org) is used for bundling and hot reloading by default.
 
-Stage / production:
+**Stage / production**:
 
 - `npm run build`
 
