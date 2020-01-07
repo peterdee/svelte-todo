@@ -11,7 +11,7 @@ app.use(compress({
   flush,
   threshold: 2048,
 }));
-app.use(serve(`${__dirname}/dist`));
+app.use(serve(`${__dirname}/public`));
 
 // launch the server
 const PORT = Number(process.env.PORT) || 8080;
