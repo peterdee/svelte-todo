@@ -65,6 +65,9 @@
 
 <div class="app-wrap">
   <h1>To-Do list with Svelte</h1>
+  <div class="source">
+    <a href="https://github.com/peterdee/svelte-todo">View the source</a>
+  </div>
   <TodoForm
     bind:input="{newTodo}"
     on:add-todo="{addTodo}"
@@ -85,13 +88,18 @@
     color: #ff3e00;
     font-size: 2em;
     font-weight: 100;
+    margin: 0;
     text-transform: uppercase;
   }
   .app-wrap {
     display: flex;
     flex-direction: column;
-    min-height: 250px;
     justify-content: flex-start;
-    padding: 25px 10px;
+    padding: 35px 10px;
+  }
+  .source {
+    font-size: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
   }
 </style>
