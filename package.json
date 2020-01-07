@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "svelte-todo",
   "private": true,
   "version": "1.0.0",
   "author": {
@@ -12,7 +12,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public"
+    "start": "NODE_ENV='production' && node ./serve.js"
   },
   "engines": {
     "node": "13.5.0",
@@ -20,14 +20,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/peterdee/svelte-todo"
+    "url": "git+https://github.com/peterdee/svelte-todo"
   },
   "keywords": [
     "Svelte",
     "Todo-list"
   ],
   "dependencies": {
-    "sirv-cli": "^0.4.4"
+    "koa": "^2.11.0",
+    "koa-compress": "^3.0.0",
+    "koa-static": "^5.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
