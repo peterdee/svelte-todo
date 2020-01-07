@@ -6,35 +6,37 @@ This is a simple Todo-list application, created with [Svelte](https://svelte.dev
 
 Project was created from a [Svelte application template](https://github.com/sveltejs/template) using [degit](https://github.com/Rich-Harris/degit).
 
----
+### Deploy
 
+- `git clone https://github.com/peterdee/svelte-todo`
+- `cd ./svelte-todo`
+- `nvm use 13.5` (please see the actual Node version in [package.json](package.json) file)
+- `npm i` (use `npm i --prod` for stage / production)
 
-## Get started
+### Lanuch
 
-Install the dependencies...
+Development:
 
-```bash
-cd svelte-app
-npm install
-```
+- `npm run dev`
 
-...then start [Rollup](https://rollupjs.org):
+The app will be available at http://localhost:5000.
 
-```bash
-npm run dev
-```
+[Rollup](https://rollupjs.org) is used for bundling and hot reloading by default.
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+Stage / production:
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+- `npm run build`
 
+This creates an optimized production build.
 
-## Building and running in production mode
+This build can then be served with an included Koa server:
 
-To create an optimised version of the app:
+- `npm run start`
 
-```bash
-npm run build
-```
+The app will be available at http://localhost:8080.
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+### Heroku deployment
+
+The `stage` branch is deployed to [Heroku](https://herokuapp.com) automatically.
+
+The app is available at https://svelte-todo.herokuapp.com.
