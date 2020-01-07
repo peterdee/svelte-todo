@@ -39,7 +39,7 @@ function createStore() {
       // return new state
       return {
         ...state,
-        todos: [...todos],
+        todos,
       };
     }),
     /**
@@ -57,7 +57,7 @@ function createStore() {
       // return new state
       return {
         ...state,
-        todos: [...todos],
+        todos,
       };
     }),
     /**
@@ -82,7 +82,7 @@ function createStore() {
       // return new state
       return {
         ...state,
-        todos: [...todos],
+        todos,
       };
     }),
     subscribe,
