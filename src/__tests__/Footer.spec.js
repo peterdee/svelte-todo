@@ -1,4 +1,5 @@
 import { render } from "@testing-library/svelte";
+
 import Footer from "../components/Footer.svelte";
 
 describe("Footer component", () => {

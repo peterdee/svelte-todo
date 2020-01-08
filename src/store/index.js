@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 // load existing todos from localStorage
-const existingTodos = localStorage.getItem('todos');
+const existingTodos = localStorage.getItem('todos') || '';
 
 // create initial state
 const initialState = {

@@ -1,4 +1,5 @@
 import { render } from "@testing-library/svelte";
+
 import StyledButton from "../components/StyledButton.svelte";
 
 describe("StyledButton component", () => {
