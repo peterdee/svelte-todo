@@ -13,10 +13,10 @@ const initialState = {
  * @returns {object}
  */
 function createStore() {
-	const { subscribe, update } = writable(initialState);
+  const { subscribe, update } = writable(initialState);
 
   // return exposed methods
-	return {
+  return {
     /**
      * Add a new todo
      * @param text {string} - text of a todo
@@ -86,7 +86,7 @@ function createStore() {
       };
     }),
     subscribe,
-	};
+  };
 }
 
 export const store = createStore();

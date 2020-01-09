@@ -1,15 +1,15 @@
 <script>
-	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
 
-	let mounted = false;
+  let mounted = false;
 
-	/**
-	 * A lifecycle hook that fires up when the DOM is mounted
-	 */
-	onMount(() => {
-		mounted = true;
-	});
+  /**
+   * A lifecycle hook that fires up when the DOM is mounted
+   */
+  onMount(() => {
+    mounted = true;
+  });
 </script>
 
 {#if mounted}
@@ -18,10 +18,10 @@
     transition:fade="{{ duration: 750 }}"
   >
     With <span
-      class="highlight"
-    >❤</span> by <a
-      href="https://github.com/peterdee"
-    >Peter Dyumin</a>
+    class="highlight"
+  >❤</span> by <a
+    href="https://github.com/peterdee"
+  >Peter Dyumin</a>
   </div>
 {/if}
 

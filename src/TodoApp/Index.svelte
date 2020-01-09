@@ -1,6 +1,6 @@
 <script>
   import { afterUpdate, onMount } from 'svelte';
-	import { fade, fly } from 'svelte/transition';
+  import { fade, fly } from 'svelte/transition';
 
   import { store } from '../store';
   import TodoForm from './Form.svelte';
@@ -13,20 +13,20 @@
   /**
    * A lifecycle hook that fires after every update
    */
-	afterUpdate(() => {
-		todos = $store.todos;
+  afterUpdate(() => {
+    todos = $store.todos;
   });
 
-	/**
-	 * A lifecycle hook that fires up when the DOM is mounted
-	 */
-	onMount(() => {
-		mounted = true;
-	});
+  /**
+   * A lifecycle hook that fires up when the DOM is mounted
+   */
+  onMount(() => {
+    mounted = true;
+  });
 
   /**
-   * Add new todo to the list
-   * @returns {void}
+   * Add new item to the list
+   * @returns {void|*}
    */
   const addTodo = () => {
     if (newTodo) {
@@ -41,14 +41,14 @@
   /**
    * Delete todo from the list
    * @param detail {number} - passed ID of the todo item
-   * @returns {void}
+   * @returns {void|*}
    */
   const deleteTodo = ({ detail: todoId = null }) => store.deleteTodo(todoId);
 
   /**
    * Switch status for a todo
    * @param detail {number} - passed ID of the todo item
-   * @returns {void}
+   * @returns {void|*}
    */
   const switchTodoStatus = ({ detail: todoId = null }) => store.switchTodoStatus(todoId);
 </script>
@@ -68,8 +68,8 @@
       <a href="https://github.com/peterdee/svelte-todo">View the source</a>
     </div>
     <TodoForm
-      bind:input="{newTodo}"
-      on:add-todo="{addTodo}"
+            bind:input="{newTodo}"
+            on:add-todo="{addTodo}"
     />
     {#each todos as item}
       <div transition:fly="{{ duration: 250 }}">
@@ -81,7 +81,7 @@
           text="{item.text}"
         />
       </div>
-	  {/each}
+    {/each}
   {/if}
 </div>
 
