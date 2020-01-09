@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher, onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
-  
+  import { fade } from 'svelte/transition';
+
   import StyledButton from '../components/StyledButton.svelte';
   import StyledInput from '../components/StyledInput.svelte';
 
@@ -11,11 +11,11 @@
   const dispatch = createEventDispatcher();
 
   /**
-	 * A lifecycle hook that fires up when the DOM is mounted
-	 */
-	onMount(() => {
-		mounted = true;
-	});
+   * A lifecycle hook that fires up when the DOM is mounted
+   */
+  onMount(() => {
+    mounted = true;
+  });
 
   const addTodo = () => dispatch('add-todo');
 </script>

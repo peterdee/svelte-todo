@@ -1,5 +1,5 @@
 <script>
-	import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from 'svelte';
 
   export let completed = false;
   export let id = '';
@@ -7,8 +7,8 @@
 
   const dispatch = createEventDispatcher();
 
-	const deleteTodo = (id = '') => dispatch('delete-todo', Number(id));
-	const switchStatus = (id = '') => dispatch('switch-status', Number(id));
+  const deleteTodo = (id = '') => dispatch('delete-todo', Number(id));
+  const switchStatus = (id = '') => dispatch('switch-status', Number(id));
 </script>
 
 <div
